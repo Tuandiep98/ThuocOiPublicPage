@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:opsz,wght@8..96,400;8..96,500;8..96,600;8..96,700&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+:root {
+  color: #102b35;
+  background: #eef7f6;
+  font-family: Lato, Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+html { min-width: 320px; }
+
+body { margin: 0; min-width: 320px; }
+
+button, a { font: inherit; }
+
+a { color: inherit; }
+
+button, a[href] { cursor: pointer; }
+
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #005f73;
+  outline-offset: 3px;
+}
+
+.site-shell {
+  width: min(100% - 40px, 880px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 26px 0 32px;
+}
+
+.masthead, .footer, .locale-control, .document-meta { display: flex; align-items: center; }
+
+.masthead { justify-content: space-between; gap: 24px; }
+
+.wordmark { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; text-decoration: none; }
+
+.wordmark-mark {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  color: #effbf8;
+  background: #16616b;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+}
+
+.locale-control { overflow: hidden; border: 1px solid #b8d3d0; border-radius: 999px; }
+
+.locale-control button {
+  min-width: 44px;
+  min-height: 36px;
+  border: 0;
+  color: #28505a;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.locale-control button[aria-pressed='true'] { color: #fff; background: #16616b; }
+
+.document-rail { width: 66px; height: 7px; margin: 62px 0 21px; background: #d56d4c; }
+
+.eyebrow { margin: 0 0 12px; color: #376e75; font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+
+.legal-document { max-width: 730px; }
+
+.document-heading { padding-bottom: 28px; border-bottom: 1px solid #b8d3d0; }
+
+h1, h2, h3 { font-family: 'EB Garamond', Georgia, serif; color: #11333d; }
+
+h1 { max-width: 15ch; margin: 0; font-size: clamp(43px, 8vw, 72px); font-weight: 500; line-height: .95; letter-spacing: -.035em; }
+
+.document-meta { gap: 30px; flex-wrap: wrap; margin: 30px 0 0; }
+
+.document-meta div { display: grid; gap: 3px; }
+
+.document-meta dt { color: #56727a; font-size: 12px; font-weight: 700; }
+
+.document-meta dd { margin: 0; font-size: 14px; font-weight: 900; }
+
+.document-content { padding-top: 36px; color: #263f47; font-size: 17px; line-height: 1.72; }
+
+.document-content > :first-child { margin-top: 0; }
+
+.document-content h2 { margin: 2.6em 0 .7em; font-size: 32px; line-height: 1.06; }
+
+.document-content h3 { margin: 2em 0 .65em; font-size: 23px; line-height: 1.16; }
+
+.document-content p, .document-content ul, .document-content ol { margin: 0 0 1.25em; }
+
+.document-content li + li { margin-top: .45em; }
+
+.document-content a { color: #0f5865; font-weight: 700; text-underline-offset: 3px; }
+
+.status-panel { max-width: 560px; padding: 0 0 44px; }
+
+.status-panel h1, .error-boundary h1 { font-size: clamp(40px, 7vw, 58px); }
+
+.status-panel p { max-width: 48ch; color: #45646d; font-size: 17px; line-height: 1.6; }
+
+.status-panel button, .error-boundary a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: #16616b;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.footer { justify-content: space-between; gap: 18px; margin-top: 88px; padding-top: 20px; border-top: 1px solid #b8d3d0; color: #56727a; font-size: 13px; }
+
+.footer nav { display: flex; gap: 18px; }
+
+.footer a { font-weight: 900; text-underline-offset: 4px; }
+
+.error-boundary { width: min(100% - 40px, 720px); min-height: 100vh; margin: 0 auto; padding-top: 18vh; }
+
+.error-boundary h1 { max-width: 12ch; margin: 0 0 24px; }
+
+@media (max-width: 560px) {
+  .site-shell { width: min(100% - 32px, 880px); padding-top: 18px; }
+  .document-rail { margin-top: 48px; }
+  .document-content { font-size: 16px; }
+  .footer { align-items: flex-start; flex-direction: column; margin-top: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
