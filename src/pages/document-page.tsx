@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
 import { LegalLayout } from '../components/legal-layout';
+import { headingId, TableOfContents, tableOfContents } from '../components/table-of-contents';
 import {
   fetchCurrentLegalDocument,
   type DocumentType,
@@ -64,6 +65,11 @@ function LegalDocumentView({ document, locale }: { document: LegalDocument; loca
   );
   const versionLabel = locale === 'vi' ? 'Phiên bản' : 'Version';
   const effectiveLabel = locale === 'vi' ? 'Có hiệu lực từ' : 'Effective from';
+  const updatedLabel = locale === 'vi' ? 'Cập nhật lần cuối' : 'Last published';
+  const publishedDate = new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(
+    new Date(document.published_at),
+  );
+  const items = tableOfContents(document.content_markdown);
 
   return (
     <article className="legal-document">
@@ -78,10 +84,23 @@ function LegalDocumentView({ document, locale }: { document: LegalDocument; loca
             <dt>{effectiveLabel}</dt>
             <dd>{date}</dd>
           </div>
+          <div>
+            <dt>{updatedLabel}</dt>
+            <dd>{publishedDate}</dd>
+          </div>
         </dl>
       </div>
+      <TableOfContents items={items} locale={locale} />
       <div className="document-content">
-        <ReactMarkdown>{document.content_markdown}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            h2: ({ children }) => <h2 id={headingId(children)} tabIndex={-1}>{children}</h2>,
+            h3: ({ children }) => <h3 id={headingId(children)} tabIndex={-1}>{children}</h3>,
+            a: ({ href, children }) => <a href={href} rel="noreferrer">{children}</a>,
+          }}
+        >
+          {document.content_markdown}
+        </ReactMarkdown>
       </div>
     </article>
   );
@@ -89,7 +108,7 @@ function LegalDocumentView({ document, locale }: { document: LegalDocument; loca
 
 function LoadingDocument({ locale }: { locale: LegalLocale }) {
   return (
-    <section className="status-panel" aria-live="polite">
+    <section className="status-panel" aria-live="polite" aria-busy="true">
       <h1>{locale === 'vi' ? 'Đang tải tài liệu' : 'Loading document'}</h1>
       <p>{locale === 'vi' ? 'Đang kiểm tra phiên bản có hiệu lực mới nhất.' : 'Checking the latest effective version.'}</p>
     </section>

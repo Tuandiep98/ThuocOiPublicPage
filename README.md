@@ -19,8 +19,8 @@ VITE_SUPABASE_URL=https://<project-ref>.supabase.co
 VITE_SUPABASE_ANON_KEY=<publishable-or-anon-key>
 ```
 
-Mở `/#/terms` hoặc `/#/privacy`. Thêm `?lang=vi` hoặc `?lang=en` để chọn ngôn
-ngữ. Không dùng service role key ở frontend.
+Mở `/#/terms`, `/#/privacy` hoặc `/#/account-deletion`. Thêm `?lang=vi` hoặc
+`?lang=en` để chọn ngôn ngữ. Không dùng service role key ở frontend.
 
 ## Điều kiện Supabase trước khi site có dữ liệu
 
@@ -33,7 +33,7 @@ trực tiếp cho trình duyệt.
 ## Deploy GitHub Pages
 
 1. Trong **Settings → Pages**, chọn source là **GitHub Actions**.
-2. Trong **Settings → Secrets and variables → Actions → Variables**, thêm
+2. Trong **Settings → Secrets and variables → Actions → Secrets**, thêm
    `SUPABASE_URL` và `SUPABASE_ANON_KEY`.
 3. Push vào `main`. Workflow tạo site ở GitHub Pages.
 
