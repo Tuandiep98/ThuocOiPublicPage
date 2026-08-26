@@ -7,10 +7,11 @@ interface LegalLayoutProps {
   children: ReactNode;
   locale: LegalLocale;
   onLocaleChange: (locale: LegalLocale) => void;
+  sectionLabel?: string;
 }
 
-export function LegalLayout({ children, locale, onLocaleChange }: LegalLayoutProps) {
-  const label = locale === 'vi' ? 'Tài liệu chính thức' : 'Official documents';
+export function LegalLayout({ children, locale, onLocaleChange, sectionLabel }: LegalLayoutProps) {
+  const label = sectionLabel ?? (locale === 'vi' ? 'Tài liệu chính thức' : 'Official documents');
 
   return (
     <div className="site-shell">
@@ -45,6 +46,7 @@ export function LegalLayout({ children, locale, onLocaleChange }: LegalLayoutPro
         <Link to={`/account-deletion?lang=${locale}`}>
           {locale === 'vi' ? 'Xoá tài khoản' : 'Delete account'}
         </Link>
+        <Link to={`/support?lang=${locale}`}>{locale === 'vi' ? 'Hỗ trợ' : 'Support'}</Link>
       </nav>
       <main id="main-content" tabIndex={-1}>
         <div className="document-rail" aria-hidden="true" />
@@ -58,6 +60,7 @@ export function LegalLayout({ children, locale, onLocaleChange }: LegalLayoutPro
           <Link to={`/account-deletion?lang=${locale}`}>
             {locale === 'vi' ? 'Xoá tài khoản' : 'Delete account'}
           </Link>
+          <Link to={`/support?lang=${locale}`}>{locale === 'vi' ? 'Hỗ trợ' : 'Support'}</Link>
         </nav>
         <span>© {new Date().getFullYear()} Tuấn Điệp · Thuốc ơi</span>
       </footer>

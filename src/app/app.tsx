@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { DocumentPage } from '../pages/document-page';
 import { AccountDeletionPage } from '../pages/account-deletion-page';
+import { SupportPage } from '../pages/support-page';
 import { NotFoundPage } from '../pages/not-found-page';
 
 class AppErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
@@ -40,6 +41,7 @@ export function App() {
         <Route path="/terms" element={<DocumentPage documentType="terms_of_service" />} />
         <Route path="/privacy" element={<DocumentPage documentType="privacy_policy" />} />
         <Route path="/account-deletion" element={<AccountDeletionPage />} />
+        <Route path="/support" element={<SupportPage />} />
         <Route path="/" element={<Navigate replace to="/terms" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

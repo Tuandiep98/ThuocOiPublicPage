@@ -19,8 +19,9 @@ VITE_SUPABASE_URL=https://<project-ref>.supabase.co
 VITE_SUPABASE_ANON_KEY=<publishable-or-anon-key>
 ```
 
-Mở `/#/terms`, `/#/privacy` hoặc `/#/account-deletion`. Thêm `?lang=vi` hoặc
-`?lang=en` để chọn ngôn ngữ. Không dùng service role key ở frontend.
+Mở `/#/terms`, `/#/privacy`, `/#/account-deletion` hoặc `/#/support`. Thêm
+`?lang=vi` hoặc `?lang=en` để chọn ngôn ngữ. Không dùng service role key ở
+frontend.
 
 ## Điều kiện Supabase trước khi site có dữ liệu
 
