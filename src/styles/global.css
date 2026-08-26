@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:opsz,wght@8..96,400;8..96,500;8..96,600;8..96,700&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
   color: #102b35;
   background: #eef7f6;
-  font-family: Lato, Arial, sans-serif;
+  font-family: 'Noto Sans', Arial, sans-serif;
   font-synthesis: none;
 }
 
@@ -35,7 +35,7 @@ button:focus-visible, a:focus-visible {
 
 .masthead { justify-content: space-between; gap: 24px; }
 
-.wordmark { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; text-decoration: none; }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: 'Be Vietnam Pro', Arial, sans-serif; font-weight: 700; text-decoration: none; }
 
 .wordmark-mark {
   display: grid;
@@ -45,8 +45,9 @@ button:focus-visible, a:focus-visible {
   border-radius: 50%;
   color: #effbf8;
   background: #16616b;
-  font-family: 'EB Garamond', Georgia, serif;
-  font-size: 19px;
+  font-family: 'Be Vietnam Pro', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .locale-control { overflow: hidden; border: 1px solid #b8d3d0; border-radius: 999px; }
@@ -58,7 +59,7 @@ button:focus-visible, a:focus-visible {
   color: #28505a;
   background: transparent;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: .08em;
 }
 
@@ -66,15 +67,15 @@ button:focus-visible, a:focus-visible {
 
 .document-rail { width: 66px; height: 7px; margin: 62px 0 21px; background: #d56d4c; }
 
-.eyebrow { margin: 0 0 12px; color: #376e75; font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.eyebrow { margin: 0 0 12px; color: #376e75; font-family: 'Be Vietnam Pro', Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 
 .legal-document { max-width: 730px; }
 
 .document-heading { padding-bottom: 28px; border-bottom: 1px solid #b8d3d0; }
 
-h1, h2, h3 { font-family: 'EB Garamond', Georgia, serif; color: #11333d; }
+h1, h2, h3 { font-family: 'Be Vietnam Pro', Arial, sans-serif; color: #11333d; }
 
-h1 { max-width: 15ch; margin: 0; font-size: clamp(43px, 8vw, 72px); font-weight: 500; line-height: .95; letter-spacing: -.035em; }
+h1 { max-width: 15ch; margin: 0; font-size: clamp(40px, 7vw, 64px); font-weight: 600; line-height: 1.12; letter-spacing: -.025em; }
 
 .document-meta { gap: 30px; flex-wrap: wrap; margin: 30px 0 0; }
 
@@ -82,15 +83,15 @@ h1 { max-width: 15ch; margin: 0; font-size: clamp(43px, 8vw, 72px); font-weight:
 
 .document-meta dt { color: #56727a; font-size: 12px; font-weight: 700; }
 
-.document-meta dd { margin: 0; font-size: 14px; font-weight: 900; }
+.document-meta dd { margin: 0; font-size: 14px; font-weight: 700; }
 
-.document-content { padding-top: 36px; color: #263f47; font-size: 17px; line-height: 1.72; }
+.document-content { padding-top: 36px; color: #263f47; font-size: 17px; line-height: 1.8; }
 
 .document-content > :first-child { margin-top: 0; }
 
-.document-content h2 { margin: 2.6em 0 .7em; font-size: 32px; line-height: 1.06; }
+.document-content h2 { margin: 2.6em 0 .7em; font-size: 30px; font-weight: 600; line-height: 1.28; letter-spacing: -.015em; }
 
-.document-content h3 { margin: 2em 0 .65em; font-size: 23px; line-height: 1.16; }
+.document-content h3 { margin: 2em 0 .65em; font-size: 22px; font-weight: 600; line-height: 1.35; }
 
 .document-content p, .document-content ul, .document-content ol { margin: 0 0 1.25em; }
 
@@ -115,7 +116,8 @@ h1 { max-width: 15ch; margin: 0; font-size: clamp(43px, 8vw, 72px); font-weight:
   color: #fff;
   background: #16616b;
   font-size: 14px;
-  font-weight: 900;
+  font-family: 'Be Vietnam Pro', Arial, sans-serif;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -123,7 +125,7 @@ h1 { max-width: 15ch; margin: 0; font-size: clamp(43px, 8vw, 72px); font-weight:
 
 .footer nav { display: flex; gap: 18px; }
 
-.footer a { font-weight: 900; text-underline-offset: 4px; }
+.footer a { font-weight: 700; text-underline-offset: 4px; }
 
 .error-boundary { width: min(100% - 40px, 720px); min-height: 100vh; margin: 0 auto; padding-top: 18vh; }
 
