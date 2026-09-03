@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import type { ReactNode } from 'react';
+import { Link } from "react-router-dom";
+import type { ReactNode } from "react";
 
-import type { LegalLocale } from '../lib/legal-documents';
+import type { LegalLocale } from "../lib/legal-documents";
 
 interface LegalLayoutProps {
   children: ReactNode;
@@ -10,43 +10,68 @@ interface LegalLayoutProps {
   sectionLabel?: string;
 }
 
-export function LegalLayout({ children, locale, onLocaleChange, sectionLabel }: LegalLayoutProps) {
-  const label = sectionLabel ?? (locale === 'vi' ? 'Tài liệu chính thức' : 'Official documents');
+export function LegalLayout({
+  children,
+  locale,
+  onLocaleChange,
+  sectionLabel,
+}: LegalLayoutProps) {
+  const label =
+    sectionLabel ??
+    (locale === "vi" ? "Tài liệu chính thức" : "Official documents");
 
   return (
     <div className="site-shell">
       <a className="skip-link" href="#main-content">
-        {locale === 'vi' ? 'Chuyển đến nội dung chính' : 'Skip to main content'}
+        {locale === "vi" ? "Chuyển đến nội dung chính" : "Skip to main content"}
       </a>
       <header className="masthead">
-        <Link className="wordmark" to="/terms" aria-label="Thuốc ơi legal documents">
-          <span aria-hidden="true" className="wordmark-mark">T</span>
+        <Link
+          className="wordmark"
+          to="/terms"
+          aria-label="Thuốc ơi legal documents"
+        >
+          <span aria-hidden="true" className="wordmark-mark">
+            T
+          </span>
           <span>Thuốc ơi</span>
         </Link>
-        <div className="locale-control" aria-label={locale === 'vi' ? 'Ngôn ngữ' : 'Language'}>
+        <div
+          className="locale-control"
+          aria-label={locale === "vi" ? "Ngôn ngữ" : "Language"}
+        >
           <button
             type="button"
-            aria-pressed={locale === 'vi'}
-            onClick={() => onLocaleChange('vi')}
+            aria-pressed={locale === "vi"}
+            onClick={() => onLocaleChange("vi")}
           >
             VI
           </button>
           <button
             type="button"
-            aria-pressed={locale === 'en'}
-            onClick={() => onLocaleChange('en')}
+            aria-pressed={locale === "en"}
+            onClick={() => onLocaleChange("en")}
           >
             EN
           </button>
         </div>
       </header>
-      <nav className="primary-nav" aria-label={locale === 'vi' ? 'Điều hướng pháp lý' : 'Legal navigation'}>
-        <Link to={`/terms?lang=${locale}`}>{locale === 'vi' ? 'Điều khoản' : 'Terms'}</Link>
-        <Link to={`/privacy?lang=${locale}`}>{locale === 'vi' ? 'Quyền riêng tư' : 'Privacy'}</Link>
-        <Link to={`/account-deletion?lang=${locale}`}>
-          {locale === 'vi' ? 'Xoá tài khoản' : 'Delete account'}
+      <nav
+        className="primary-nav"
+        aria-label={locale === "vi" ? "Điều hướng pháp lý" : "Legal navigation"}
+      >
+        <Link to={`/terms?lang=${locale}`}>
+          {locale === "vi" ? "Điều khoản" : "Terms"}
         </Link>
-        <Link to={`/support?lang=${locale}`}>{locale === 'vi' ? 'Hỗ trợ' : 'Support'}</Link>
+        <Link to={`/privacy?lang=${locale}`}>
+          {locale === "vi" ? "Quyền riêng tư" : "Privacy"}
+        </Link>
+        <Link to={`/account-deletion?lang=${locale}`}>
+          {locale === "vi" ? "Xoá tài khoản" : "Delete account"}
+        </Link>
+        <Link to={`/support?lang=${locale}`}>
+          {locale === "vi" ? "Hỗ trợ" : "Support"}
+        </Link>
       </nav>
       <main id="main-content" tabIndex={-1}>
         <div className="document-rail" aria-hidden="true" />
@@ -54,13 +79,22 @@ export function LegalLayout({ children, locale, onLocaleChange, sectionLabel }: 
         {children}
       </main>
       <footer className="footer">
-        <nav aria-label={locale === 'vi' ? 'Tài liệu pháp lý' : 'Legal documents'}>
-          <Link to={`/terms?lang=${locale}`}>{locale === 'vi' ? 'Điều khoản' : 'Terms'}</Link>
-          <Link to={`/privacy?lang=${locale}`}>{locale === 'vi' ? 'Quyền riêng tư' : 'Privacy'}</Link>
-          <Link to={`/account-deletion?lang=${locale}`}>
-            {locale === 'vi' ? 'Xoá tài khoản' : 'Delete account'}
+        <nav
+          aria-label={locale === "vi" ? "Tài liệu pháp lý" : "Legal documents"}
+        >
+          <Link to={`/terms?lang=${locale}`}>
+            {locale === "vi" ? "Điều khoản" : "Terms"}
           </Link>
-          <Link to={`/support?lang=${locale}`}>{locale === 'vi' ? 'Hỗ trợ' : 'Support'}</Link>
+          <Link to={`/privacy?lang=${locale}`}>
+            {locale === "vi" ? "Quyền riêng tư" : "Privacy"}
+          </Link>
+          <Link to={`/account-deletion?lang=${locale}`}>
+            {locale === "vi" ? "Xoá tài khoản" : "Delete account"}
+          </Link>
+          <Link to={`/support?lang=${locale}`}>
+            {locale === "vi" ? "Hỗ trợ" : "Support"}
+          </Link>
+          <a href="https://thuocoi.com">thuocoi.com</a>
         </nav>
         <span>© {new Date().getFullYear()} Tuấn Điệp · Thuốc ơi</span>
       </footer>
